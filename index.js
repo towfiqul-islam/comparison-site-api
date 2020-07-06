@@ -14,6 +14,6 @@ app.listen(port, () => {
 
 app.get('/', async (req, res) => {
   res.json({
-    status: `Server running successfully! from ${process.env.LOCATION}`,
+    status: `Automation working from ${process.env.LOCATION}`,
   });
 });

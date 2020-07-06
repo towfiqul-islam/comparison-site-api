@@ -1,0 +1,25 @@
+---
+images:
+  - 'gcr.io/comparison-site-api/comparison-site-api:$COMMIT_SHA'
+steps:
+  - args:
+      - build
+      - '-t'
+      - 'gcr.io/comparison-site-api/comparison-site-api:$COMMIT_SHA'
+      - '.'
+    name: gcr.io/cloud-builders/docker
+  - args:
+      - push
+      - 'gcr.io/comparison-site-api/comparison-site-api:$COMMIT_SHA'
+    name: gcr.io/cloud-builders/docker
+  - args:
+      - run
+      - deploy
+      - comparison-site-api
+      - '--image'
+      - 'gcr.io/comparison-site-api/comparison-site-api:$COMMIT_SHA'
+      - '--region'
+      - asia-east1
+      - '--platform'
+      - managed
+    name: gcr.io/cloud-builders/gcloud
