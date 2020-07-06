@@ -1,0 +1,24 @@
+PROJECT_ID: comparison-site-api
+DB instance: comparison-site-db-instance
+
+root password: 9FnbmM03bN3E101h
+
+
+
+
+field for adding phone
+	brand,
+	modelName,
+	releasedYear,
+	price,
+	ram,
+	storage,
+	condition,
+	warranty,
+	isDeliveryAvailable,
+	sellerName,
+	sellerAddress,
+	sellerPhone,
+	sellerFb,
+	sellerSite,
+	sellerBikroy
