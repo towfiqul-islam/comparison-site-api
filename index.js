@@ -37,11 +37,11 @@ function getDbPool() {
   return cachedDbPool;
 }
 
-const getPhone = async id => {
+async function getPhone(id) {
   return new Promise(function (resolve, reject) {
     const sql = 'SELECT * FROM phones WHERE id = ?';
     getDbPool().query(sql, [id], (err, results) => {
       resolve(results[0]);
     });
   });
-};
+}
