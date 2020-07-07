@@ -18,12 +18,6 @@ app.get('/', async (req, res) => {
   });
 });
 
-app.get('/:id', async (req, res) => {
-  const id = parseInt(req.params.id);
-  const phone = await getPhone(id);
-  res.json({status: 'Success', data: {phone: phone}});
-});
-
 let cachedDbPool;
 function getDbPool() {
   if (!cachedDbPool) {
@@ -36,6 +30,12 @@ function getDbPool() {
   }
   return cachedDbPool;
 }
+
+app.get('/:id', async (req, res) => {
+  const id = parseInt(req.params.id);
+  const phone = await getPhone(id);
+  res.json({status: 'Success', data: {phone: phone}});
+});
 
 async function getPhone(id) {
   return new Promise(function (resolve, reject) {
