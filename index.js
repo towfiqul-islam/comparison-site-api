@@ -49,12 +49,12 @@ async function getPhone(id) {
 app.post('/', async (req, res) => {
   const id = await createPhone(req.body);
   const phone = await getPhone(id);
-  res.json({status: 'Phone added', phone: {phone: phone}});
+  res.json({status: 'Phone added', data: {phone: phone}});
 });
 
 function createPhone(fields) {
   return new Promise(function (resolve, reject) {
-    const sql = 'INSERT INTO phones SET = ?';
+    const sql = 'INSERT INTO phones SET ?';
     getDbPool().query(sql, fields, (err, results) => {
       resolve(results.insertId);
     });
