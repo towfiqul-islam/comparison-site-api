@@ -21,7 +21,7 @@ app.get('/', async (req, res) => {
 let cachedDbPool;
 function getDbPool() {
   if (!cachedDbPool) {
-    mysql.createPool({
+    cachedDbPool = mysql.createPool({
       connectionLimit: 1,
       user: process.env.SQL_USER,
       database: process.env.SQL_NAME,
