@@ -3,6 +3,10 @@ DB instance: comparison-site-db-instance
 
 root password: 9FnbmM03bN3E101h
 
+SQL_USER = rest-api
+SQL_NAME = phones_db
+INST_CON_NAME = comparison-site-api:asia-south1:comparison-site-db-instance
+
 
 
 
